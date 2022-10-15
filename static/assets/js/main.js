@@ -15,7 +15,7 @@ const updateData = () => {
         let filename = document.location.hash
         filename = filename.match(/[\w]+/)
         axios.get("/api/read/" + filename).then(({ data }) => {
-            if (data.data) {
+            if (data.success) {
                 document.getElementById("data").value = data.data
             } else {
                 alert("err")
