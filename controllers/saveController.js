@@ -5,7 +5,7 @@ class saveController {
         let res_ = {
         }
 
-        const filename = req.params.filename.match(/[\w]+/)
+        const filename = req.params.filename.match(/[\w]+/)[0]
         const data = req.body.data
 
         try {

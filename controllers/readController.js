@@ -6,7 +6,7 @@ class readController {
 
         }
 
-        const filename = req.params.filename.match(/[\w]+/)
+        const filename = req.params.filename.match(/[\w]+/)[0]
 
         try {
 
