@@ -1,6 +1,6 @@
 const saveController = require("../controllers/saveController")
 const saveRouter = require("express").Router()
 
-saveRouter.post("/save/:filename", saveController)
+saveRouter.post("/save/:filename", saveController.save)
 
 module.exports = saveRouter
