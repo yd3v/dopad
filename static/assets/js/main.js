@@ -1,6 +1,6 @@
 
 
-function genFilename() {
+const createFilename = () => {
     let payload = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     var output = '';
     for (var i = 0; i < 8; i++) {
@@ -12,7 +12,7 @@ function genFilename() {
 
 const updateData = () => {
     if (document.location.hash) {
-        filename = document.location.hash
+        let filename = document.location.hash
         filename = filename.match(/[\w]+/)
         axios.get("/api/read/" + filename).then(({ data }) => {
             if (data.data) {
@@ -22,7 +22,8 @@ const updateData = () => {
             }
         })
     } else {
-        document.location.href = "/#" + genFilename()
+        let filename = createFilename()
+        document.location.href = "/#" + filename
     }
 }
 
@@ -33,6 +34,7 @@ const saveData = (filename, data) => {
         console.log(data)
     })
 }
+
 document.getElementById("data").onkeyup = (e) => {
     filename = document.location.hash
     filename = filename.match(/[\w]+/)

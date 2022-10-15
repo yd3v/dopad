@@ -2,9 +2,9 @@ const fs = require("fs")
 const saveController = (req, res) => {
 
     let res_ = {
-
     }
-    const filename = req.params.filename
+
+    const filename = req.params.filename.match(/[\w]+/)
     const data = req.body.data
 
     try {
