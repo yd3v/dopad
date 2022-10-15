@@ -14,7 +14,7 @@ const updateData = () => {
     if (document.location.hash) {
         let filename = document.location.hash
         filename = filename.match(/[\w]+/)
-        axios.get("/api/read/" + filename).then(({ data }) => {
+        axios.get("/api/file/" + filename + "/read").then(({ data }) => {
             if (data.success) {
                 document.getElementById("data").value = data.data
             } else {
@@ -30,7 +30,7 @@ const updateData = () => {
 const saveData = (filename, data) => {
     const formData = new FormData()
     formData.append("data", data)
-    axios.post("/api/save/" + filename, formData).then(({ data }) => {
+    axios.post("/api/file/" + filename + "/write", formData).then(({ data }) => {
         console.log(data)
     })
 }
