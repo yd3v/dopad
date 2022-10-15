@@ -1,5 +1,5 @@
 const fs = require("fs")
-class readController {
+class ReadController {
     static async read(req, res) {
 
         let res_ = {
@@ -28,4 +28,4 @@ class readController {
         res.json(res_)
     }
 }
-module.exports = readController
+module.exports = ReadController

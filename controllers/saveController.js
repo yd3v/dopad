@@ -1,5 +1,5 @@
 const fs = require("fs")
-class saveController {
+class SaveController {
     static async save(req, res) {
 
         let res_ = {
@@ -22,4 +22,4 @@ class saveController {
         res.json(res_)
     }
 }
-module.exports = saveController
+module.exports = SaveController

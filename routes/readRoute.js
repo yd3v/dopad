@@ -1,6 +1,6 @@
-const readController = require("../controllers/readController")
+const ReadController = require("../controllers/readController")
 const readRouter = require("express").Router()
 
-readRouter.get("/read/:filename", readController.read)
+readRouter.get("/read/:filename", ReadController.read)
 
 module.exports = readRouter
